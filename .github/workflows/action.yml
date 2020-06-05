@@ -18,8 +18,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: validate manifests in dir1
-        uses: makocchi-git/actions-k8s-manifests-validate-conftest@v1.0.0
+        uses: makocchi-git/actions-k8s-manifests-validate-conftest@master
         with:
           file: dir1
           policy: policy/kubernetes
+          update: github.com/makocchi-git/sample-kubernetes-rego-policy
           token: ${{ secrets.GITHUB_TOKEN }}
